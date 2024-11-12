@@ -1,0 +1,86 @@
+.home {
+    background-color: #f4f4f4;
+    color: #333;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .home-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+  }
+  
+  .home-text {
+    max-width: 600px;
+  }
+  
+  .home-text .subtitle {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #94143f; /* Highlight color */
+  }
+  
+  .home-text h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+  
+  .home-text .highlight {
+    color: #e91e63; /* Highlight color */
+  }
+  
+  .home-text .location {
+    font-size: 1.2em;
+    color: #b3b3b3;
+  }
+  
+  .profile-image {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  /* Ensure this is in your Home.css */
+
+/* Fade-in effect for the name */
+.fade-in-effect {
+  font-size: 3rem; /* Adjust size to your preference */
+  font-weight: bold;
+  color: #333;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Fade-in effect for the subtitle after name is typed */
+.fade-in-subtitle {
+  opacity: 0; /* Initially hidden */
+  animation: fadeInSubtitle 1s forwards; /* Fade-in animation */
+  animation-delay: 0.0s; /* Adjust delay if needed */
+}
+
+/* Keyframes for subtitle fade-in animation */
+@keyframes fadeInSubtitle {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

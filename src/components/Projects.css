@@ -1,0 +1,210 @@
+.research {
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 80px 20px;
+    text-align: center;
+  }
+  
+  .research-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+  }
+  
+  .research-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    cursor: pointer;
+  }
+  
+  .research-card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+  }
+  
+  .research-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .research-image-wrapper {
+    overflow: hidden;
+    height: 200px;
+  }
+  
+  .research-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .research-card:hover .research-image {
+    transform: scale(1.1);
+  }
+  
+  .research-text {
+    padding: 20px;
+    text-align: left;
+  }
+  
+  .research-text h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #e91e63;
+  }
+  
+  .research-text p {
+    font-size: 1em;
+    margin-bottom: 20px;
+    color: #666;
+  }
+  
+  .research-text a {
+    color: #e91e63;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .research-text a:hover {
+    color: #ff4081;
+  }
+/* Full-screen expanded mode for each project */
+.research-full-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 95vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  background-color: #fff;
+  padding: 30px;
+  z-index: 1050; /* Ensure it stays above other content */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to the top */
+  overflow-y: auto; /* Allow scrolling inside the full-screen view */
+  transition: none; /* Disable transitions for instant expansion */
+}
+
+/* Prevent hover effect when the card is expanded */
+.research-card.research-expanded:hover {
+  transform: none; /* Disable hover transformation when expanded */
+  box-shadow: none; /* Disable hover shadow when expanded */
+  transition: none; /* Ensure no transition after clicking "Learn More" */
+}
+
+/* Expanded state - ensure no delay on expand */
+.research-expanded {
+  width: 100vw; /* Ensure the expanded section takes the full width */
+  height: 100vh; /* Full screen */
+  background-color: #fff;
+  padding: 30px;
+  position: fixed; /* Fixed positioning for full-screen effect */
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  display: block;
+  overflow-y: auto; /* Allow scrolling in expanded view */
+  transition: none; /* Remove transition for instant effect */
+}
+
+/* Normal hover effect for non-expanded cards */
+.research-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect only on non-expanded cards */
+}
+
+/* Close button styling */
+.research-close-btn {
+  background-color: #ff0055;
+  color: white;
+  padding: 10px 20px;
+  margin-bottom: 80px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  align-self: center; /* Center the button horizontally */
+}
+
+.research-close-btn:hover {
+  background-color: #e6004c;
+}
+.research-detailed-description h3 {
+  font-size: 2.2em;
+  margin-bottom: 20px;
+  color: #e91e63;
+  text-align: center;
+  font-weight: bold;
+}
+.research-detailed-description {
+  padding-left: 40px;
+  padding-right: 80px;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #e6004c;
+  background-color: #f9f9f9;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.pr-img1, .pr-img2{
+  width: 50%;
+  align-self: center;
+  padding: 10px;
+}
+/* Media query for screens smaller than 768px (tablet or smaller devices) */
+@media (max-width: 768px) {
+  .research h2 {
+      font-size: 2em;
+  }
+  
+  .research-text h3 {
+      font-size: 1.2em;
+  }
+  
+  .research-container {
+      grid-template-columns: 1fr; /* Stacks cards on top of each other */
+  }
+}
+
+/* Media query for screens smaller than 480px (mobile devices) */
+@media (max-width: 480px) {
+  .research h2 {
+      font-size: 1.8em;
+  }
+  
+  .research-text h3 {
+      font-size: 1.1em;
+  }
+  
+  .research-container {
+      grid-template-columns: 1fr;
+  }
+  
+  .research-card {
+      max-width: 100%; /* Make sure card takes full width */
+  }
+  
+  .research-text p {
+      font-size: 0.9em;
+  }
+  
+  .contact {
+      padding: 30px 15px;
+  }
+  
+  .research {
+      padding: 50px 10px;
+  }
+}

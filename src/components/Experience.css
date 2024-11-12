@@ -1,0 +1,147 @@
+.services {
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.services-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.service-item {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 30px 0px;
+  width: 500px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  cursor: pointer; /* Ensures the entire item is clickable if needed */
+}
+
+.service-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+  height: 150px;
+  width: 150px;
+  color: #e91e63;
+}
+
+.service-item h3 {
+  font-size: 2em;
+  color: #333;
+}
+
+.service-item p, #des {
+  font-size: 1em;
+  color: #666;
+  padding: 15px; /* Moved padding to all paragraphs for consistency */
+}
+
+.service-item a {
+  color: #e91e63;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.service-item a:hover {
+  color: #ff4081;
+}
+
+.full-screen {
+  width: 95vw; /* Full viewport width */
+    height: 100vh;
+  background-color: #fff;
+  padding: 30px;
+  position: fixed; /* Changed from absolute to fixed for full-screen */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1050; 
+  display: block;
+  justify-content: flex-start; /* Start content from top */
+}
+.expanded {
+  width: 100vw; /* Full viewport width */
+    height: 100vh;
+  background-color: #fff;
+  padding: 30px;
+  position: fixed; /* Changed from absolute to fixed for full-screen */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1050; /* Ensures it's on top of other content */
+  display: block;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: auto; /* Allow scrolling within the full-screen section */
+    /* max-height: 100vh; Ensure the section does not exceed the viewport height */
+}
+
+.close-btn {
+  background-color: #ff0055;
+  color: white;
+  padding: 10px 20px;
+  margin-bottom: 80px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  align-self: center; 
+}
+
+.close-btn:hover {
+  background-color: #e6004c;
+}
+.detailed-description {
+  padding-top: 50px;
+  padding-bottom: 100px;
+  padding-right: 100px;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+ul {
+  text-align: left;
+  margin-top: 15px;
+  color: #666;
+}
+
+ul li {
+  margin-bottom: 10px;
+}
+
+.close-btn {
+  background-color: #ff0055;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.close-btn:hover {
+  background-color: #e6004c;
+}
+body {
+  overflow: hidden; 
+}
