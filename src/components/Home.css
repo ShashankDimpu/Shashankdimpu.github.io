@@ -57,7 +57,29 @@
   opacity: 0;
   animation: fadeIn 0.5s forwards;
 }
+/* Responsive Design (Only for Mobile Screens) */
+@media (max-width: 768px) {
+  .home-content {
+    flex-direction: column; /* Stack text and image */
+    text-align: center; /* Center-align content */
+  }.home-text {
+    order: 2; /* Move text below image */
+  }
 
+  .profile-image {
+    max-width: 300px; /* Adjust image size for mobile */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Space between image and text */
+  }
+
+  .home-text h1 {
+    font-size: 2rem; /* Reduce heading size */
+  }
+
+  .home-text .location {
+    font-size: 1rem; /* Adjust subtitle size */
+  }
+}
 /* Keyframes for fade-in animation */
 @keyframes fadeIn {
   0% {
