@@ -51,13 +51,13 @@ const Services = () => {
             <p>Software Engineer</p>
             <p id='des'>
               Two years of professional experience in both software engineering and education. 
-              As a Software Engineer at Datalyzer International Inc. <br></br>(May 2022 – July 2023)
+              As a Software Engineer at Datalyzer International Inc. <br></br>(May 2021 – July 2023)
             </p>
             {expandedSection === 'datalyzer' && (
               <div className="detailed-description full-screen" onClick={(e) => e.stopPropagation()}>
                 <h3>Software Engineer at Datalyzer International Inc.</h3>
                 <p><strong>Role:</strong> Software Engineer</p>
-                <p><strong>Duration:</strong> May 2022 – July 2023</p>
+                <p><strong>Duration:</strong> May 2021 – July 2023</p>
                 <p>
                   At Datalyzer International Inc., I was responsible for the design and development of high-performance software solutions.
                   I led the creation of critical systems that supported business operations and customer-facing applications, ensuring 

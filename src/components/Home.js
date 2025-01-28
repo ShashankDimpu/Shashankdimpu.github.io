@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css';
-import profileImage from '../assets/Profile pic.jpg'; // Ensure this path is correct
+import profileImage from '../assets/profile-pic.png'; // Ensure this path is correct
 
 const Home = () => {
   const fullName = "H i, I'm Shashank Shankaregowda";

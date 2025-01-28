@@ -37,15 +37,12 @@ const Contact = () => {
             <a href="https://www.linkedin.com/in/shashank-shankaregowda-9b09071b9/" target="_blank" rel="noopener noreferrer">
               <FaLinkedinIn className="social-icon" /> {/* LinkedIn Icon */}
             </a>
-            <a href="https://www.instagram.com/your-instagram-handle" target="_blank" rel="noopener noreferrer">
-              <FaInstagram className="social-icon" /> {/* Instagram Icon */}
-            </a>
             <a href="https://github.com/ShashankDimpu" target="_blank" rel="noopener noreferrer">
                 <FaGithub className="social-icon" /> {/* GitHub Icon */}
             </a>
           </div>
           <div className="resume-download">
-            <a href="/shashank resume_FS.pdf" download="Shashank_Sankaregoda_Resume.pdf">
+            <a href="/Shashank.pdf" download="Shashank_Sankaregoda_Resume.pdf">
               <button className="download-button">Download Resume</button>
             </a>
           </div>

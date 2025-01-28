@@ -12,7 +12,7 @@ const AboutMe = () => {
         <div className="about-text">
           <h2>About Me</h2>
           <p>
-          I am currently pursuing a Master’s degree in Computer Science at the University at Buffalo, specializing in Artificial Intelligence. My academic journey has allowed me to dive deep into subjects like Machine Learning, Deep Learning, Data Models, and Computer Vision, preparing me for advanced problem-solving in AI.
+          I have graduated with a Master’s degree in Computer Science at the University at Buffalo, specializing in Artificial Intelligence. My academic journey has allowed me to dive deep into subjects like Machine Learning, Deep Learning, Data Models, and Computer Vision, preparing me for advanced problem-solving in AI.
           </p>
           <p>
           In my professional experience as a Software Engineer at Datalyzer International, I led the design and implementation of scalable RESTful APIs using C#. I also worked on optimizing relational database schemas, ensuring data integrity and performance for high-transaction environments.
