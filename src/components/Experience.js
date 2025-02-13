@@ -108,6 +108,7 @@ const Services = () => {
           >
             <img src={BrightLogo} className="service-icon" alt="BrightChamps Logo" />
             <h3>BrightChamps</h3>
+            <h4>(Part-time)</h4>
             <p>Coding Instructor</p>
             <p id='des'>
               I worked as a Coding Instructor at BrightChamps Pvt. Ltd., where I taught diverse groups of students 

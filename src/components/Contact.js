@@ -41,11 +41,11 @@ const Contact = () => {
                 <FaGithub className="social-icon" /> {/* GitHub Icon */}
             </a>
           </div>
-          <div className="resume-download">
+          {/* <div className="resume-download">
             <a href="/Shashank.pdf" download="Shashank_Sankaregoda_Resume.pdf">
               <button className="download-button">Download Resume</button>
             </a>
-          </div>
+          </div> */}
         </div>
 
         <div className="contact-form">

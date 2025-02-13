@@ -9,8 +9,13 @@ import Testimonials from './components/Testimonials';
 import Blog from './components/Blog';
 import Contact from './components/Contact';
 import './App.css';
+import { useEffect } from "react";
 
-const App = () => {
+function App() {
+  useEffect(() => {
+    document.title = "Shashank Shankaregowda";
+  }, []);
+
   return (
     <div className="App">
       <Navbar />
@@ -24,7 +29,22 @@ const App = () => {
       <Contact />
     </div>
   );
-};
+}
+// const App = () => {
+//   return (
+//     <div className="App">
+//       <Navbar />
+//       <Home />
+//       <AboutMe />
+//       <Services />
+//       <Research />
+//       {/* <PatientResources /> */}
+//       {/* <Testimonials />
+//       <Blog /> */}
+//       <Contact />
+//     </div>
+//   );
+// };
 
 export default App;
 

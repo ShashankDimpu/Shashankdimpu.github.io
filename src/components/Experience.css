@@ -1,7 +1,7 @@
 .services {
   background-color: #f4f4f4;
   color: #333;
-  padding: 80px 20px;
+  padding: 30px 20px;
   text-align: center;
 }
 
@@ -15,14 +15,14 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 40px;
 }
 
 .service-item {
   background-color: #fff;
   border-radius: 15px;
-  padding: 30px 0px;
-  width: 500px;
+  padding: 10px 0px;
+  width: 600px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: center;
@@ -48,7 +48,7 @@
 .service-item p, #des {
   font-size: 1em;
   color: #666;
-  padding: 15px; /* Moved padding to all paragraphs for consistency */
+  padding: 5px; /* Moved padding to all paragraphs for consistency */
 }
 
 .service-item a {

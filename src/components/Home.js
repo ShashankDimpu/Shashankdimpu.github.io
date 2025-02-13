@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css';
-import profileImage from '../assets/profile-pic.png'; // Ensure this path is correct
+import profileImage from '../assets/picture.jpg'; // Ensure this path is correct
 
 const Home = () => {
   const fullName = "H i, I'm Shashank Shankaregowda";
@@ -33,6 +33,11 @@ const Home = () => {
               Innovating Software Engineering with Scalable Solutions and AI
             </p>
           )}
+          <div className="resume-download">
+            <a href="/Shashank.pdf" download="Shashank_Sankaregoda_Resume.pdf">
+              <button className="download-button">Download Resume</button>
+            </a>
+          </div>
         </div>
         <img src={profileImage} alt="Shashank Shankaregowda" className="profile-image"/>
       </div>
