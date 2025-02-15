@@ -27,7 +27,7 @@ const Navbar = () => {
         <li><a href="#about-me">About Me</a></li>
         <li><a href="#services">Experience</a></li>
         <li><a href="#research">Projects</a></li>
-        {/* <li><a href="#patient-resources">Patient Resources</a></li> */}
+        <li><a href="#skills">Skills & Expertise</a></li>
         {/* <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="#blog">Blog</a></li> */}
         <li><a href="#contact">Contact</a></li>
