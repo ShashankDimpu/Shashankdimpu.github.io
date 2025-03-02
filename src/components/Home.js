@@ -34,7 +34,7 @@ const Home = () => {
             </p>
           )}
           <div className="resume-download">
-            <a href="/Shashank.pdf" download="Shashank_Sankaregoda_Resume.pdf">
+            <a href="/Shashank.pdf" download="Shashank_Shankaregowda_Resume.pdf">
               <button className="download-button">Download Resume</button>
             </a>
           </div>
