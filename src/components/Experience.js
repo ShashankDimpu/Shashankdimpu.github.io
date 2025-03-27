@@ -100,71 +100,70 @@ const Services = () => {
           </div>
         ) : null}
 
-        {/* BrightChamps Section */}
-        {expandedSection === null || expandedSection === 'brightchamps' ? (
-          <div
-            className={`service-item ${expandedSection === 'brightchamps' ? 'expanded' : ''}`}
-            onClick={toggleBrightChampsDetails} 
-          >
-            <img src={BrightLogo} className="service-icon" alt="BrightChamps Logo" />
-            <h3>BrightChamps</h3>
-            <h4>(Part-time)</h4>
-            <p>Coding Instructor</p>
-            <p id='des'>
-              I worked as a Coding Instructor at BrightChamps Pvt. Ltd., where I taught diverse groups of students 
-              and created tailored coding curriculums across various technologies such as HTML, JavaScript, Python, 
-              and Machine Learning. <br></br>(March 2021 – April 2022)
-            </p>
-            {expandedSection === 'brightchamps' && (
-              <div className="detailed-description full-screen" onClick={(e) => e.stopPropagation()}>
-                <h3>Coding Instructor at BrightChamps Pvt. Ltd.</h3>
-                <p><strong>Role:</strong> Coding Instructor</p>
-                <p><strong>Duration:</strong> March 2021 – April 2022</p>
-                <p>
-                  As a Coding Instructor at BrightChamps, I had the rewarding experience of teaching coding and programming fundamentals 
-                  to young students from diverse backgrounds. I was responsible for creating an engaging and structured curriculum that 
-                  introduced students to core programming concepts and practical applications, with a focus on fostering creativity and 
-                  problem-solving skills. I taught various programming languages and technologies, including HTML, CSS, JavaScript, Python, 
-                  and basic machine learning, adapting lessons to suit different learning paces and interests.
-                </p>
-                <ul>
-                  <li>
-                    <strong>Curriculum Development:</strong> Developed a well-rounded and accessible curriculum that included hands-on 
-                    projects, coding challenges, and interactive lessons, aimed at sparking curiosity and interest in technology.
-                  </li>
-                  <li>
-                    <strong>Interactive Coding Sessions:</strong> Conducted live, virtual coding sessions with up to 15 students per class, 
-                    guiding them through project-based learning and real-world coding exercises.
-                  </li>
-                  <li>
-                    <strong>Customized Lesson Plans:</strong> Created customized lesson plans to accommodate individual learning styles 
-                    and skill levels, ensuring every student could follow along and benefit from the course.
-                  </li>
-                  <li>
-                    <strong>Student Progress Assessment:</strong> Regularly assessed student progress and provided personalized feedback, 
-                    helping each learner overcome challenges and achieve their individual goals.
-                  </li>
-                  <li>
-                    <strong>Project-Based Learning:</strong> Successfully facilitated the creation of diverse projects, such as interactive 
-                    web pages, basic games, and simple applications, empowering students to showcase their work with pride and confidence.
-                  </li>
-                  <li>
-                    <strong>Positive Feedback and Impact:</strong> Received consistently positive feedback from students and parents, with a 
-                    significant increase in class participation and retention rates—over 25% growth—thanks to the engaging and supportive 
-                    learning environment.
-                  </li>
-                </ul>
-                <p>
-                  Working at BrightChamps was a fulfilling experience, as I was able to inspire the next generation of coders and witness 
-                  their growth firsthand. The experience taught me the value of patience, adaptability, and the importance of making 
-                  technology education engaging and approachable. I am proud to have been part of their journey and to have contributed to 
-                  a program that nurtures young talent and encourages innovation.
-                </p>
-                <button onClick={toggleBrightChampsDetails} className="close-btn">Close</button>
-              </div>
-            
-            )}
-          </div>
+     {/* BrightChamps Section */}
+{expandedSection === null || expandedSection === 'brightchamps' ? (
+  <div
+    className={`service-item ${expandedSection === 'brightchamps' ? 'expanded' : ''}`}
+    onClick={toggleBrightChampsDetails}
+  >
+    <img src={BrightLogo} className="service-icon" alt="BrightChamps Logo" />
+    <h3>BrightChamps</h3>
+    <h4>Freelance</h4>
+    <p>Software Engineer</p>
+    <p id='des'>
+      Developed scalable web and mobile applications, implemented cloud billing analysis tools, 
+      and optimized API integrations to enhance system efficiency at BrightChamps Pvt. Ltd. <br></br>(March 2021 – August 2023)
+    </p>
+    {expandedSection === 'brightchamps' && (
+      <div className="detailed-description full-screen" onClick={(e) => e.stopPropagation()}>
+        <h3>Software Engineer at BrightChamps Pvt. Ltd.</h3>
+        <p><strong>Role:</strong> Software Engineer</p>
+        <p><strong>Duration:</strong> March 2021 – August 2023</p>
+        <p>
+          As a Software Engineer at BrightChamps, I contributed to the development of scalable 
+          applications, API integrations, and cloud-based solutions while improving system performance 
+          and user experience.
+        </p>
+        <ul>
+          <li>
+            Developed and maintained scalable web and mobile applications using JavaScript, Python, C++, and HTML to enhance performance and reliability.
+          </li>
+          <li>
+            Designed and built a cloud billing analysis tool using GCP (BigQuery, DataFlow) to enable real-time spend analysis for leadership decision-making.
+          </li>
+          <li>
+            Integrated RESTful APIs to establish seamless communication between front-end and back-end systems, improving system responsiveness.
+          </li>
+          <li>
+            Enhanced UI/UX performance using CSS Sprites and mobile-first design, reducing load times and improving user interactions.
+          </li>
+          <li>
+            Optimized SQL queries and database performance in PostgreSQL, reducing query execution time and improving data retrieval speed.
+          </li>
+          <li>
+            Implemented authentication and security measures, including OAuth and JWT, ensuring secure access to web applications.
+          </li>
+          <li>
+            Developed reusable React components to improve code efficiency and maintainability across multiple projects.
+          </li>
+          <li>
+            Automated deployment processes using CI/CD pipelines, improving software release cycles and reducing manual effort.
+          </li>
+          <li>
+            Conducted thorough debugging and performance profiling, reducing system latency and improving overall application stability.
+          </li>
+          <li>
+            Collaborated with cross-functional teams to troubleshoot production issues, ensuring minimal downtime and quick resolution.
+          </li>
+        </ul>
+        <p>
+          My work at BrightChamps strengthened my expertise in full-stack development, cloud computing, and performance optimization, 
+          enabling me to deliver high-quality, scalable solutions.
+        </p>
+        <button onClick={toggleBrightChampsDetails} className="close-btn">Close</button>
+      </div>
+    )}
+  </div>
         ) : null}
       </div>
     </section>
