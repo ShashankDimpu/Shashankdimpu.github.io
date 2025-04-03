@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Experience.css';
 import DataLogo from "../assets/DataLogo.jpeg";
 import BrightLogo from "../assets/BrightLogo.jpeg";
+import HolidayLogo from "../assets/holiday_logo.png"
 
 const Services = () => {
   const [expandedSection, setExpandedSection] = useState(null); // Track which section is expanded
@@ -35,6 +36,9 @@ const Services = () => {
   const toggleBrightChampsDetails = () => {
     setExpandedSection(expandedSection === 'brightchamps' ? null : 'brightchamps');
   };
+  const toggleHolidayChannelDetails = () => {
+    setExpandedSection(expandedSection === 'holidaychannel' ? null : 'holidaychannel');
+  };
 
   return (
     <section id="services" className="services">
@@ -48,11 +52,12 @@ const Services = () => {
           >
             <img src={DataLogo} className="service-icon" alt="Datalyzer Logo" />
             <h3>Datalyzer</h3>
-            <p>Software Engineer</p>
+            <h4>Software Engineer</h4>
             <p id='des'>
               Two years of professional experience in both software engineering and education. 
               As a Software Engineer at Datalyzer International Inc. <br></br>(May 2021 – July 2023)
             </p>
+            <h4>Bengaluru India</h4>
             {expandedSection === 'datalyzer' && (
               <div className="detailed-description full-screen" onClick={(e) => e.stopPropagation()}>
                 <h3>Software Engineer at Datalyzer International Inc.</h3>
@@ -108,12 +113,12 @@ const Services = () => {
   >
     <img src={BrightLogo} className="service-icon" alt="BrightChamps Logo" />
     <h3>BrightChamps</h3>
-    <h4>Freelance</h4>
-    <p>Software Engineer</p>
+    <h4>Software Engineer (Freelance)</h4>
     <p id='des'>
       Developed scalable web and mobile applications, implemented cloud billing analysis tools, 
       and optimized API integrations to enhance system efficiency at BrightChamps Pvt. Ltd. <br></br>(March 2021 – August 2023)
     </p>
+    <h4>Bengaluru India</h4>
     {expandedSection === 'brightchamps' && (
       <div className="detailed-description full-screen" onClick={(e) => e.stopPropagation()}>
         <h3>Software Engineer at BrightChamps Pvt. Ltd.</h3>
@@ -165,6 +170,57 @@ const Services = () => {
     )}
   </div>
         ) : null}
+  {/* Holiday Channel Section */}
+{expandedSection === null || expandedSection === 'holidaychannel' ? (
+  <div
+    className={`service-item ${expandedSection === 'holidaychannel' ? 'expanded' : ''}`}
+    onClick={toggleHolidayChannelDetails}
+  >
+    <img src={HolidayLogo} className="service-icon" alt="Holiday Channel Logo" />
+    <h3>Holiday Channel</h3>
+    <h4>Software Engineer Intern</h4>
+    <p id='des'>
+      Contributing to the development of full-stack web applications, enhancing backend scalability, and optimizing frontend performance at Holiday Channel. <br></br>(Current)
+    </p>
+    <h4>Colorado USA</h4>
+    {expandedSection === 'holidaychannel' && (
+      <div className="detailed-description full-screen" onClick={(e) => e.stopPropagation()}>
+        <h3>Software Engineer Intern at Holiday Channel</h3>
+        <p><strong>Role:</strong> Software Engineer Intern</p>
+        <p><strong>Duration:</strong> Current</p>
+        <p>
+          As a Software Engineer Intern at Holiday Channel, I am actively involved in developing scalable web applications, optimizing backend processes, and improving user experience through frontend enhancements.
+        </p>
+        <ul>
+          <li>
+            Developing and integrating dynamic frontend components using React and TypeScript, enhancing application responsiveness and user interactivity.
+          </li>
+          <li>
+            Designing and optimizing backend services using Node.js and MongoDB to ensure efficient data handling and improved API performance.
+          </li>
+          <li>
+            Implementing authentication and authorization mechanisms using JWT and OAuth to enhance application security.
+          </li>
+          <li>
+            Enhancing system performance by optimizing database queries and structuring indexes to reduce query execution time.
+          </li>
+          <li>
+            Automating deployment pipelines using Docker and CI/CD workflows to streamline software delivery and updates.
+          </li>
+          <li>
+            Collaborating with cross-functional teams to troubleshoot and resolve application issues, ensuring system stability and performance.
+          </li>
+        </ul>
+        <p>
+          Through this internship, I am gaining hands-on experience in full-stack development, cloud infrastructure, and scalable system design, strengthening my ability to deliver high-performance applications.
+        </p>
+        <button onClick={toggleHolidayChannelDetails} className="close-btn">Close</button>
+      </div>
+    )}
+  </div>
+) : null}
+
+
       </div>
     </section>
   );
