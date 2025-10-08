@@ -13,7 +13,7 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    display: flex;
+    display: -webkit-inline-box;
     justify-content: center;
   }
   
@@ -38,4 +38,27 @@
   .navbar.scrolled {
     background-color: rgba(51, 51, 51, 0.9);
   }
-  
+
+/* 📱 Mobile Responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  .nav-links {
+    flex-wrap: wrap; /* Prevents stacking */
+    width: 100%;
+    justify-content: center;
+    gap: 10px; /* Adjust spacing between items */
+  }
+
+  .nav-links li {
+    display: inline-block;
+  }
+
+  .nav-links li a {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}

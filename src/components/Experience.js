@@ -55,14 +55,14 @@ const Services = () => {
             <h4>Software Engineer</h4>
             <p id='des'>
               Two years of professional experience in both software engineering and education. 
-              As a Software Engineer at Datalyzer International Inc. <br></br>(May 2021 – July 2023)
+              As a Software Engineer at Datalyzer International Inc. <br></br>(February 2021 – July 2023)
             </p>
-            <h4>Bengaluru India</h4>
+            <h4>Bengaluru, India</h4>
             {expandedSection === 'datalyzer' && (
               <div className="detailed-description full-screen" onClick={(e) => e.stopPropagation()}>
                 <h3>Software Engineer at Datalyzer International Inc.</h3>
                 <p><strong>Role:</strong> Software Engineer</p>
-                <p><strong>Duration:</strong> May 2021 – July 2023</p>
+                <p><strong>Duration:</strong> February 2021 – July 2023</p>
                 <p>
                   At Datalyzer International Inc., I was responsible for the design and development of high-performance software solutions.
                   I led the creation of critical systems that supported business operations and customer-facing applications, ensuring 
@@ -116,14 +116,14 @@ const Services = () => {
     <h4>Software Engineer (Freelance)</h4>
     <p id='des'>
       Developed scalable web and mobile applications, implemented cloud billing analysis tools, 
-      and optimized API integrations to enhance system efficiency at BrightChamps Pvt. Ltd. <br></br>(March 2021 – August 2023)
+      and optimized API integrations to enhance system efficiency at BrightChamps Pvt. Ltd. <br></br>(March 2021 – July 2023)
     </p>
-    <h4>Bengaluru India</h4>
+    <h4>Bengaluru, India</h4>
     {expandedSection === 'brightchamps' && (
       <div className="detailed-description full-screen" onClick={(e) => e.stopPropagation()}>
         <h3>Software Engineer at BrightChamps Pvt. Ltd.</h3>
         <p><strong>Role:</strong> Software Engineer</p>
-        <p><strong>Duration:</strong> March 2021 – August 2023</p>
+        <p><strong>Duration:</strong> March 2021 – July 2023</p>
         <p>
           As a Software Engineer at BrightChamps, I contributed to the development of scalable 
           applications, API integrations, and cloud-based solutions while improving system performance 
@@ -178,11 +178,11 @@ const Services = () => {
   >
     <img src={HolidayLogo} className="service-icon" alt="Holiday Channel Logo" />
     <h3>Holiday Channel</h3>
-    <h4>Software Engineer Intern</h4>
+    <h4>Software Engineer</h4>
     <p id='des'>
       Contributing to the development of full-stack web applications, enhancing backend scalability, and optimizing frontend performance at Holiday Channel. <br></br>(Current)
     </p>
-    <h4>Colorado USA</h4>
+    <h4>Colorado, USA</h4>
     {expandedSection === 'holidaychannel' && (
       <div className="detailed-description full-screen" onClick={(e) => e.stopPropagation()}>
         <h3>Software Engineer Intern at Holiday Channel</h3>
