@@ -1,57 +1,90 @@
-import React from "react";
-import "./skills.css"; // Importing the CSS file
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import './skills.css';
 
-const skillsData = [
+const categories = [
   {
-    category: "Programming Languages",
-    skills: ["Python", "TypeScript", "JavaScript", "C#", "C++", "HTML", "CSS"],
+    label: 'Languages',
+    color: '#6366f1',
+    skills: ['Python', 'C#', 'TypeScript', 'JavaScript', 'Node.js', 'C++'],
   },
   {
-    category: "Backend Development",
-    skills: ["Node.js", ".NET Core", "Flask", "Nest.js", "Web API", "REST APIs"],
+    label: 'AI & Machine Learning',
+    color: '#a855f7',
+    skills: ['Azure OpenAI', 'LLM / RAG Pipelines', 'Semantic Kernel', 'MCP Framework', 'TensorFlow', 'PyTorch', 'Scikit-Learn', 'Keras', 'NLP', 'Computer Vision', 'CNNs'],
   },
   {
-    category: "Frontend Development",
-    skills: ["React.js", "Angular", "HTML", "CSS", "Tailwind CSS", "Bootstrap"],
+    label: 'Cloud & DevOps',
+    color: '#0891b2',
+    skills: ['Azure', 'AWS (EC2, Lambda, ECS, S3, RDS)', 'Docker', 'Kubernetes', 'Azure DevOps', 'GitHub Actions', 'Terraform', 'CI/CD Pipelines'],
   },
   {
-    category: "Data & Cloud Technologies",
-    skills: ["PostgreSQL", "MySQL", "SSMS", "Hadoop", "PySpark", "Docker", "AWS"],
+    label: 'Backend & Architecture',
+    color: '#10b981',
+    skills: ['REST APIs', 'FastAPI', 'Flask', 'Microservices', 'Distributed Systems', 'WebSockets', 'Serverless', 'ETL Pipelines'],
   },
   {
-    category: "AI & Machine Learning",
-    skills: ["TensorFlow", "PyTorch", "OpenCV", "Computer Vision", "Deep Learning"],
+    label: 'Performance & SRE',
+    color: '#f59e0b',
+    skills: ['Prometheus', 'Grafana', 'JMeter', 'Playwright', 'Load Testing', 'SLAs / SLOs', 'MTTR Optimization', 'Capacity Planning'],
   },
   {
-    category: "Tools & DevOps",
-    skills: ["Git", "Docker", "Webpack", "Yarn", "Postman", "CI/CD Pipelines"],
-  },
-  {
-    category: "Other Skills",
-    skills: ["Data Structures & Algorithms", "System Design", "Incident Management", "Team Collaboration"],
+    label: 'Data Management',
+    color: '#ec4899',
+    skills: ['PostgreSQL', 'MySQL', 'SQL Server', 'MongoDB', 'FAISS', 'Azure Cognitive Search'],
   },
 ];
 
 const Skills = () => {
+  const [headerRef, headerIn] = useScrollAnimation();
+
   return (
     <section id="skills" className="skills-section">
-      <div className="skills-container">
-        <h2 className="skills-title"> Skills & Expertise</h2>
+      <div className="container">
+        <div ref={headerRef} className={`animate ${headerIn ? 'in-view' : ''}`}>
+          <span className="section-label">Toolkit</span>
+          <h2 className="section-title">
+            Skills & <span className="gradient-text">Expertise</span>
+          </h2>
+          <p className="section-sub">
+            Technologies I use across enterprise AI systems, cloud infrastructure, performance engineering, and full-stack development.
+          </p>
+        </div>
+
         <div className="skills-grid">
-          {skillsData.map((category, index) => (
-            <div key={index} className="skill-category">
-              <h3 className="category-title">{category.category}</h3>
-              <ul className="skill-list">
-                {category.skills.map((skill, i) => (
-                  <li key={i} className="skill-item">{skill}</li>
-                ))}
-              </ul>
-            </div>
+          {categories.map((cat, i) => (
+            <SkillCard key={cat.label} cat={cat} index={i} />
           ))}
         </div>
       </div>
     </section>
   );
 };
+
+function SkillCard({ cat, index }) {
+  const [ref, inView] = useScrollAnimation();
+  return (
+    <div ref={ref} className={`skill-cat glass-card animate d${(index % 3) + 1} ${inView ? 'in-view' : ''}`}>
+      <div className="skill-cat-header">
+        <span className="skill-cat-dot" style={{ background: cat.color }} />
+        <h3 className="skill-cat-name">{cat.label}</h3>
+      </div>
+      <div className="skill-tags">
+        {cat.skills.map(s => (
+          <span
+            key={s}
+            className="skill-pill"
+            style={{
+              background: `${cat.color}14`,
+              border: `1px solid ${cat.color}30`,
+              color: cat.color,
+            }}
+          >
+            {s}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default Skills;

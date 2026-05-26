@@ -1,68 +1,124 @@
-import React, { useState } from 'react';
-import './Contact.css';
-import { FaEnvelope, FaPhone, FaInstagram, FaLinkedinIn, FaGithub} from 'react-icons/fa';
+import { useState } from 'react';
+import { FaEnvelope, FaPhone, FaLinkedinIn, FaGithub } from 'react-icons/fa';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import emailjs from 'emailjs-com';
+import './Contact.css';
 
 const Contact = () => {
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [sent,    setSent]    = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error,   setError]   = useState(false);
+  const [headerRef, headerIn] = useScrollAnimation();
+  const [formRef,   formIn]   = useScrollAnimation();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
-
+    setSending(true);
+    setError(false);
     emailjs.sendForm('service_6uuz05u', 'template_7at33jm', e.target, 'uxRRLTJhII2wWwEGd')
-      .then((result) => {
-          console.log(result.text);
-          setIsSubmitted(true);
-      }, (error) => {
-          console.log(error.text);
+      .then(() => {
+        setSent(true);
+        setSending(false);
+        e.target.reset();
+      })
+      .catch(() => {
+        setSending(false);
+        setError(true);
       });
-
-    e.target.reset();  
   };
 
   return (
-    <section id="contact" className="contact">
-      <div className="contact-container">
-        <div className="contact-info">
-          <h2>Contact Me</h2>
-          <div className="info-item">
-            <FaEnvelope className="info-icon" />
-            <p>shashanks874pm@gmail.com</p>
-          </div>
-          <div className="info-item">
-            <FaPhone className="info-icon" />
-            <p>4255470422</p>
-          </div>
-          <div className="contact-item">
-            <a href="https://www.linkedin.com/in/shashank-shankaregowda-9b09071b9/" target="_blank" rel="noopener noreferrer">
-              <FaLinkedinIn className="social-icon" /> {/* LinkedIn Icon */}
+    <section id="contact" className="contact-section">
+      <div className="contact-glow" />
+      <div className="container contact-inner">
+
+        {/* Left — info */}
+        <div ref={headerRef} className={`contact-info animate ${headerIn ? 'in-view' : ''}`}>
+          <span className="section-label">Get In Touch</span>
+          <h2 className="section-title">
+            Let's <span className="gradient-text">Connect</span>
+          </h2>
+          <p className="contact-desc">
+            Whether you have a role in mind, want to collaborate on a project, or just want to say hi —
+            my inbox is always open.
+          </p>
+
+          <div className="contact-links">
+            <a href="mailto:shashanks874pm@gmail.com" className="contact-link">
+              <span className="contact-icon-wrap"><FaEnvelope /></span>
+              <div>
+                <p className="contact-link-label">Email</p>
+                <p className="contact-link-value">shashanks874pm@gmail.com</p>
+              </div>
             </a>
-            <a href="https://github.com/ShashankDimpu" target="_blank" rel="noopener noreferrer">
-                <FaGithub className="social-icon" /> {/* GitHub Icon */}
+
+            <a href="tel:4255470422" className="contact-link">
+              <span className="contact-icon-wrap"><FaPhone /></span>
+              <div>
+                <p className="contact-link-label">Phone</p>
+                <p className="contact-link-value">+1 (425) 547-0422</p>
+              </div>
             </a>
           </div>
-          {/* <div className="resume-download">
-            <a href="/Shashank.pdf" download="Shashank_Sankaregoda_Resume.pdf">
-              <button className="download-button">Download Resume</button>
+
+          <div className="contact-socials">
+            <a href="https://www.linkedin.com/in/shashank-shankaregowda-9b09071b9/"
+               target="_blank" rel="noopener noreferrer" className="social-btn">
+              <FaLinkedinIn />
+              <span>LinkedIn</span>
             </a>
-          </div> */}
+            <a href="https://github.com/ShashankDimpu"
+               target="_blank" rel="noopener noreferrer" className="social-btn">
+              <FaGithub />
+              <span>GitHub</span>
+            </a>
+          </div>
         </div>
 
-        <div className="contact-form">
-          {isSubmitted ? (
-            <div className="thank-you-message">
-              <h2>Thank You!</h2>
-              <p>Your message has been successfully sent.</p>
+        {/* Right — form */}
+        <div ref={formRef} className={`contact-form-wrap glass-card animate d2 ${formIn ? 'in-view' : ''}`}>
+          {sent ? (
+            <div className="contact-success">
+              <div className="success-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <h3>Message sent!</h3>
+              <p>Thanks for reaching out. I'll get back to you shortly.</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit}>
-              <input type="text" name="user_name" placeholder="Name" required />
-              <input type="email" name="user_email" placeholder="Email" required />
-              <textarea name="message" placeholder="Message" required></textarea>
-              <button type="submit" className="submit-btn">Submit</button>
+            <form onSubmit={handleSubmit} className="contact-form">
+              <h3 className="form-title">Send a message</h3>
+              <div className="form-row">
+                <div className="form-group">
+                  <label>Name</label>
+                  <input type="text" name="user_name" placeholder="Your name" required />
+                </div>
+                <div className="form-group">
+                  <label>Email</label>
+                  <input type="email" name="user_email" placeholder="your@email.com" required />
+                </div>
+              </div>
+              <div className="form-group">
+                <label>Message</label>
+                <textarea name="message" placeholder="What's on your mind?" rows={6} required />
+              </div>
+              {error && (
+                <p className="form-error">
+                  Something went wrong. Please try again or email me directly at shashanks874pm@gmail.com
+                </p>
+              )}
+              <button type="submit" className="btn btn-primary form-submit" disabled={sending}>
+                {sending ? 'Sending…' : 'Send Message'}
+              </button>
             </form>
           )}
         </div>
+      </div>
+
+      <div className="footer-bar">
+        <p>© {new Date().getFullYear()} Shashank Shankaregowda · Built with React</p>
       </div>
     </section>
   );
